@@ -44,7 +44,7 @@
 <section class="info-section" id="location"><div class="info-grid"><div><h2>Missä Nummirock sijaitsee?</h2><p>Kauhajoen Nummijärvellä, juhannuksen raskaimmilla metallikinkereillä.</p><p>Neljän päivän lipun esimerkkikuvaus: lippu sisältää auto- ja telttapaikan. Tarkemmat festivaali- ja saapumistiedot löytyvät nykyiseltä sivulta.</p><a href="https://nummirock.fi/liput_ja_sijainti" target="_blank" rel="noopener">Nykyiset saapumisohjeet ↗</a></div><div class="location-box"><span class="eyebrow">23.–26.6.2027</span><strong>Nummijärvi · Kauhajoki</strong><p>Nummijärventie 385<br>61910 Nummijärvi</p><p class="demo-note">Tämä on kaupan toimintamalli. Muu sivusisältö on tiivistetty.</p></div></div></section>
 </main>
 <footer class="wrap footer"><p>NUMMIROCK · Kauppa 2.0 · Toiminnallinen prototyyppi 14.11.2026</p><p>Tuotekuvat ja brändiaineistot ladataan Nummirockin tuotantosivuilta. Kaupan toiminta on kokonaan simuloitu. Kirja ei sisälly tähän protoon; sen nykyinen GEST-myynti ei muutu.</p><button class="text-button" id="technical-footer">Toteutuksen rajaukset ja testausohjeet</button></footer>
-<button class="floating" id="open-cart" aria-haspopup="dialog"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l3 12h10l3-9H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span><strong>Ostoskori</strong><small id="floating-total">0 kpl · 0,00 €</small></span></button>
+<button class="floating" id="open-cart" aria-haspopup="dialog" hidden><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l3 12h10l3-9H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span><strong>Ostoskori</strong><small id="floating-total">0 kpl · 0,00 €</small></span></button>
 <div id="toast" class="toast" role="status" hidden></div><div class="sr-only" id="live" aria-live="polite" aria-atomic="true"></div>
 <dialog id="checkout" class="modal" aria-labelledby="checkout-title"></dialog>
 <dialog id="image-modal" class="modal image-dialog" aria-labelledby="image-title"><div class="modal-top" style="background:white"><strong id="image-title">Tuotekuva</strong><button class="close" id="close-image" aria-label="Sulje tuotekuva">×</button></div><div class="modal-body"><img id="large-image" alt=""></div></dialog>
@@ -108,7 +108,7 @@ function renderMerch(){
  }).join('');
 }
 function renderSelections(){
- const t=totals(state.local);$('floating-total').textContent=`${t.qty} kpl · ${eur(t.sum)}`;
+ const t=totals(state.local);$('open-cart').hidden=t.qty===0;$('floating-total').textContent=`${t.qty} kpl · ${eur(t.sum)}`;
  $('open-cart').setAttribute('aria-label',`Ostoskori, ${t.qty} kappaletta, ${eur(t.sum)}. Avaa simuloitu Liveto-kassa.`);
 }
 function render(){renderTickets();renderMerch();renderSelections();}
