@@ -59,9 +59,9 @@ Tekninen selite sivun yläreunassa avaa nämä rajaukset ja sisältää siirtovi
 
 `index.html` sisältää toimintalogiikan, tyylit ja tallennetun tuoteaineiston. `README.md` on tämä ohje, `.nojekyll` estää sivusisällön Jekyll-käsittelyn. Ei npm- tai palvelinasennuksia. Sivu voidaan tarjota myös muulta staattisen HTML:n palvelimelta; sitä ei liitetä Nummirockin nykyiseen CMS-sivupohjaan.
 
-Kuvat ja Nummirockin otsikkofontit ladataan suoraan tuotantopalvelimelta. Anaheim ladataan Google Fontsista kuten nykyisillä sivuilla. Internet-yhteys tarvitaan niihin. Proton toiminta ei lataa tuotannon yleisiä skriptejä, oikeaa Livetoa, GESTiä, analytiikkaa tai maksupalvelua.
+Kuvat ladataan suoraan tuotantopalvelimelta. Nummirockin alkuperäinen otsikkofontti on kopioitu tuotantosivulta tiedostoon `nummirock-heading.woff` ja tarjoillaan proton omalta verkkotunnukselta, jotta selaimen CORS-rajoitus ei vaihda otsikoita varafonttiin. Otsikko-, leipäteksti- ja merch-koot vastaavat tuotantosivujen CSS-määrityksiä. Anaheim ladataan Google Fontsista kuten nykyisillä sivuilla. Internet-yhteys tarvitaan niihin. Proton toiminta ei lataa tuotannon yleisiä skriptejä, oikeaa Livetoa, GESTiä, analytiikkaa tai maksupalvelua.
 
-- `https://nummirock.fi/2017/fonts.css`
+- Otsikkofontin lähde: `https://nummirock.fi/2017/fonts/nummirockonethreecustomthre-webfont.woff` (proton mukana `nummirock-heading.woff`).
 - `https://fonts.googleapis.com/css?family=Anaheim&display=swap`
 - `https://nummirock.fi/2017/images/Alasivu_tausta_1_2027.jpg`
 - `https://nummirock.fi/2017/images/Otsikon_grafiikat_Alasivu_1_2027.png`
