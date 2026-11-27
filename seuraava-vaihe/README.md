@@ -29,3 +29,14 @@ Toimitusmaksu on erillinen tuote. Merch-tuotteet jäävät koriin, vaikka toimit
 5. Päätetään aikataulu ja tuotantoon vienti. Tässä muutoksessa ei julkaista oikeaa kauppaa.
 
 Lähde: Liveton tekninen vastausdokumentti 24.11.2026 sekä Leean tarkennus 27.11.2026. Puuttuvat komennot ovat kehitysehdotuksia ilman toteutus- tai aikataululupausta. Tämä proto ei todenna Liveton tuotantotoimintaa.
+
+## Päivitys 27.11.2026: lippusivu ja kuvaviite
+
+- Kelluva **Osta liput** vie proton kaikista sivunäkymistä `#liput`-näkymän lippuosioon. Liveto avataan sen omista ostopainikkeista.
+- Liveton lippulista on ensisijainen; Tiketti ja Epassi/Edenred/Zevoy/Wolt Benefits esitellään erillisessä alemmassa osiossa. Logot linkitetään Tiketin julkisiin aineistoihin. Maksutapaehdot: https://www.tiketti.fi/info/kulttuuriedut .
+- Lippujen käyttöohjeet sekä sijainti, karttalinkki, ajo-ohjeet ja saapuminen on erotettu. Sisältöviite: https://nummirock.fi/liput_ja_sijainti . Kartta ei lataudu automaattisesti; karttalinkki avaa Googlen kartan.
+- Modaalin visualisointi noudattaa käyttäjän toimittamia **1.0-kuvakaappauksia**: musta ylätunniste, Info/Liput, tuotevalinta, tilaajatiedot, maksutaparuudukko, oikean palstan kori ja loppusumma sekä Maksua odotetaan -näkymä. Tämä EI vahvista 2.0-version näkymien vastaavuutta. Aiemmissa 2.0-kuvissa kassa on kolmipalstainen. Tekninen PDF määrittelee toimintoja, ei ulkoasun yhtäläisyyttä. Tämä versioero tarkistetaan sandboxissa Leealta.
+- Määrän muutokset ovat nyt kaupan oman tuotevalinnan sisällä, eivät Nummirockin sivulla. Ne eivät esitä puuttuvia ulkoisen API:n komentoja tuettuina.
+- Demomaksu avautuu erilliseen välilehteen. Välilehden sulkeminen jättää maksun odottamaan. Sivulla on jatkopainike ja tilauksen peruminen; vasta hyväksytty demomaksu näyttää onnistumisen. Viestin alkuperä, lähettäjäikkuna ja satunnainen tunniste tarkistetaan. Ei oikeaa maksupalvelua.
+
+Aiemmat maininnat demomaksun samasta ikkunasta ja kolmipalstaisesta demokassasta kuvaavat ensimmäistä versiota ja korvautuvat yllä olevalla. Vanha tavoitemalli repositorion juuressa säilyy muuttumattomana.
