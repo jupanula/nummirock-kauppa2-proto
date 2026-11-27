@@ -40,3 +40,11 @@ Lähde: Liveton tekninen vastausdokumentti 24.11.2026 sekä Leean tarkennus 27.1
 - Demomaksu avautuu erilliseen välilehteen. Välilehden sulkeminen jättää maksun odottamaan. Sivulla on jatkopainike ja tilauksen peruminen; vasta hyväksytty demomaksu näyttää onnistumisen. Viestin alkuperä, lähettäjäikkuna ja satunnainen tunniste tarkistetaan. Ei oikeaa maksupalvelua.
 
 Aiemmat maininnat demomaksun samasta ikkunasta ja kolmipalstaisesta demokassasta kuvaavat ensimmäistä versiota ja korvautuvat yllä olevalla. Vanha tavoitemalli repositorion juuressa säilyy muuttumattomana.
+
+### Lippusivun tyylit ja toteutusrajaus
+
+Maksutapalogot ovat nyt tuotteet-sivun tapaan harmaat, keskitetyt ja ilman taustakortteja. Sijainti ja saapuminen käyttää pääotsikon fonttia, kokoa ja riviväliä. Sivun sisäiset pikalinkit sekä ensisijaisuus- ja tilannekuvatekstit poistettiin käyttäjän pyynnöstä.
+
+Lippupainikkeen avaus vastaa dokumentoitua komentoa `window.LIVETO_JS_API("open/event", {event: "nummirock-2027", view: "tickets"})`. Yksittäisen lipun syvälinkkiä tai erillistä open/checkout-komentoa ei oleteta tuetuksi. Merch vastaa tapahtumaa `nummirock-shop`, näkymää `merchandise`. Proto simuloi näitä, eikä lataa oikeaa Livetoa.
+
+**Käyttäjän pysyvä ohje:** jos tuleva muutospyyntö vaatii Livetolta kehitystä, jota ei voi toteuttaa nykyisellä aikataululla, huomauta ensin. Älä toteuta tällaista muutosta ilman huomautuksen jälkeen annettua erillistä pyyntöä.
